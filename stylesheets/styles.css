@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
+/* line 3, ../sass/styles.scss */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 13, ../sass/styles.scss */
+html {
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* line 20, ../sass/styles.scss */
+body {
+  font-family: 'Titillium', sans-serif;
+  line-height: 1.5;
+  color: #fff;
+  background: -webkit-linear-gradient(30deg, #7a3ec0, #70A6E1);
+  background: -o-linear-gradient(30deg, #7a3ec0, #70A6E1);
+  background: linear-gradient(60deg, #7a3ec0, #70A6E1);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 33, ../sass/styles.scss */
+#vue-app {
+  position: relative;
+  top: 10vh;
+}
+
+/* line 38, ../sass/styles.scss */
+p {
+  text-align: center;
+  font-size: 24px;
+}
+
+/* line 40, ../sass/styles.scss */
+button {
+  background: #ed143d;
+  color: #fff;
+  padding: 10px 25px;
+  margin-right: 10px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
+}
+/* line 49, ../sass/styles.scss */
+button:last-child {
+  margin-right: 0;
+}
+/* line 55, ../sass/styles.scss */
+button:hover {
+  opacity: .8;
+}
+
+/* line 60, ../sass/styles.scss */
+#score {
+  font-family: 'Titillium', sans-serif;
+  background: #ed143d;
+  border-radius: 50%;
+  padding: 25px;
+  -webkit-box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 35%;
+}
+/* line 71, ../sass/styles.scss */
+#score h2 {
+  font-size: 24px;
+}
+/* line 74, ../sass/styles.scss */
+#score p {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+/* line 81, ../sass/styles.scss */
+#controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* line 93, ../sass/styles.scss */
+#bag {
+  width: 200px;
+  height: 400px;
+  margin: auto;
+  background: url(../img/bag.png) center no-repeat;
+  background-size: 80%;
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  margin-bottom: 3vh;
+}
+
+/* line 109, ../sass/styles.scss */
+.hinge {
+  -webkit-animation-name: hinge;
+  animation-name: hinge;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes hinge {
+  0%, 100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  25% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  75% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+}
+@keyframes hinge {
+  0%, 100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  25% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  75% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+}
+/* line 193, ../sass/styles.scss */
+#bag.burst {
+  background: url(../img/bag-burst.png) center no-repeat;
+  background-size: 80%;
+}
+
+/* line 198, ../sass/styles.scss */
+#bag-health {
+  width: 200px;
+  margin: 0 auto 20px;
+}
+/* line 202, ../sass/styles.scss */
+#bag-health h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+/* line 207, ../sass/styles.scss */
+#bag-health div {
+  height: 25px;
+  background: #ed143d;
+  -webkit-transition: ease-in-out .05s;
+  -o-transition: ease-in-out .05s;
+  transition: ease-in-out .05s;
+}

@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+$crimson: #ed143d;
+
+html {
+	height: 100%;
+	width: 100%;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+body {
+	font-family: 'Titillium', sans-serif;
+	line-height: 1.5;
+	color: #fff;
+	background: -webkit-linear-gradient(30deg, #7a3ec0, #70A6E1);
+	background: -o-linear-gradient(30deg, #7a3ec0, #70A6E1);
+	background: linear-gradient(60deg, #7a3ec0, #70A6E1);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+// Container
+
+#vue-app {
+	position: relative;
+	top: 10vh;
+}
+
+p {text-align: center; font-size: 24px;}
+
+button {
+	background: $crimson;
+	color: #fff;
+	padding: 10px 25px;
+	margin-right: 10px;
+	cursor: pointer;
+	-webkit-box-shadow: 0px 7px 12px rgba(0,0,0,.2);
+	        box-shadow: 0px 7px 12px rgba(0,0,0,.2);
+
+	&:last-child {margin-right: 0;}
+
+	&:hover {
+		opacity: .8;
+	}
+}
+
+#score {
+	font-family: 'Titillium', sans-serif;
+	background: $crimson;
+	border-radius: 50%;
+	padding: 25px;
+	-webkit-box-shadow: 0px 7px 12px rgba(0,0,0,.2);
+	  box-shadow: 0px 7px 12px rgba(0,0,0,.2);
+
+	position: absolute;
+	left: 35%;
+
+	h2 {
+		font-size: 24px;
+	}
+	p {
+		font-size: 21px;
+		font-weight: bold;
+	}
+
+}
+
+#controls {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack:center;
+	    -ms-flex-pack:center;
+	        justify-content:center;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+}
+
+#bag {
+	width: 200px;
+	height: 400px;
+	margin: auto;
+	background: url(../img/bag.png) center no-repeat;
+	background-size: 80%;
+	-webkit-transform-origin: top;
+	    -ms-transform-origin: top;
+	        transform-origin: top;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+	margin-bottom: 3vh; 
+}
+
+// #bag.hinge
+
+.hinge {
+	-webkit-animation-name:hinge;
+	        animation-name:hinge;
+	-webkit-animation-duration: 1s;
+	        animation-duration: 1s;
+}
+
+@-webkit-keyframes hinge {
+  0%, 100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+
+  25% {
+  	-webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+
+  75% {
+  	-webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+
+}
+
+@keyframes hinge {
+  0%, 100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+
+  25% {
+  	-webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+
+ 	75% {
+  	-webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+}
+
+#bag.burst {
+	background: url(../img/bag-burst.png) center no-repeat;
+	background-size: 80%;
+}
+
+#bag-health {
+	width: 200px;
+	margin: 0 auto 20px;
+
+	h2 {
+		text-align: center;
+		margin-bottom: 5px;
+	}
+
+	div {
+		height: 25px;
+		background: $crimson;
+		-webkit-transition: ease-in-out .05s;
+		-o-transition: ease-in-out .05s;
+		transition: ease-in-out .05s;
+	}
+
+}
