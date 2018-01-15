@@ -1,4 +1,4 @@
-# Vue.JS-Punching-Bag
+# Vue.JS Punching Bag
 Exactly what it says on the tin.
 
 It's not done yet. However, it works!<br>
