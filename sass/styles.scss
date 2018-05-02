@@ -1,211 +1,315 @@
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
 
 * {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 $crimson: #ed143d;
 
 html {
-	height: 100%;
-	width: 100%;
-	max-height: 100%;
-	max-width: 100%;
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 body {
-	font-family: 'Titillium', sans-serif;
-	line-height: 1.5;
-	color: #fff;
-	background: -webkit-linear-gradient(30deg, #7a3ec0, #70A6E1);
-	background: -o-linear-gradient(30deg, #7a3ec0, #70A6E1);
-	background: linear-gradient(60deg, #7a3ec0, #70A6E1);
-	background-repeat: no-repeat;
-	background-size: cover;
+  font-family: "Titillium", sans-serif;
+  line-height: 1.5;
+  color: #fff;
+  background: -webkit-linear-gradient(30deg, #7a3ec0, #70a6e1);
+  background: -o-linear-gradient(30deg, #7a3ec0, #70a6e1);
+  background: linear-gradient(60deg, #7a3ec0, #70a6e1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  // Impede que a scoreboard cause a barra de rolagem horizontal.
+  overflow: hidden;
 }
 
 // Container
 
 #vue-app {
-	position: relative;
-	top: 10vh;
+  position: relative;
+  top: 10vh;
 }
 
-p {text-align: center; font-size: 24px;}
+p {
+  text-align: center;
+  font-size: 24px;
+}
 
 button {
-	background: $crimson;
-	color: #fff;
-	padding: 10px 25px;
-	margin-right: 10px;
-	cursor: pointer;
-	-webkit-box-shadow: 0px 7px 12px rgba(0,0,0,.2);
-	        box-shadow: 0px 7px 12px rgba(0,0,0,.2);
+  background: $crimson;
+  color: #fff;
+  padding: 10px 25px;
+  margin-right: 10px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
 
-	&:last-child {margin-right: 0;}
+  &:last-child {
+    margin-right: 0;
+  }
 
-	&:hover {
-		opacity: .8;
-	}
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 #score {
-	font-family: 'Titillium', sans-serif;
-	background: $crimson;
-	border-radius: 50%;
-	padding: 25px;
-	-webkit-box-shadow: 0px 7px 12px rgba(0,0,0,.2);
-	  box-shadow: 0px 7px 12px rgba(0,0,0,.2);
+  font-family: "Titillium", sans-serif;
+  background: $crimson;
+  border-radius: 50%;
+  padding: 25px;
+  -webkit-box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
 
-	position: absolute;
-	left: 35%;
+  position: absolute;
+  left: 35%;
 
-	h2 {
-		font-size: 24px;
-	}
-	p {
-		font-size: 21px;
-		font-weight: bold;
-	}
-
+  h2 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 21px;
+    font-weight: bold;
+  }
 }
 
 #controls {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack:center;
-	    -ms-flex-pack:center;
-	        justify-content:center;
-	-webkit-box-align:center;
-	    -ms-flex-align:center;
-	        align-items:center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #bag {
-	width: 200px;
-	height: 400px;
-	margin: auto;
-	background: url(../img/bag.png) center no-repeat;
-	background-size: 80%;
-	-webkit-transform-origin: top;
-	    -ms-transform-origin: top;
-	        transform-origin: top;
+  width: 200px;
+  height: 400px;
+  margin: auto;
+  background: url(../img/bag.png) center no-repeat;
+  background-size: 80%;
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-	margin-bottom: 3vh; 
+  animation-fill-mode: both;
+  margin-bottom: 3vh;
 }
 
+.scoreboard {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  background: #fff;
+  color: #000;
+  padding: 20px;
+
+  position: absolute;
+  top: 15vh;
+  right: -275px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    padding: 20px 25px;
+    border-radius: 20%;
+    font-weight: bold;
+
+    position: absolute;
+    left: -45px;
+  }
+
+  p {
+    font-size: 27px;
+  }
+
+  span {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+    //border-bottom: solid 2px #ccc;
+  }
+
+  li {
+    flex-basis: 1;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 10px;
+    //border: solid 1px red;
+  }
+
+  .rotate {
+    animation-name: rotate;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.show {
+  animation-name: show;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards; /* faz com que a animação fique no último frame.*/
+  animation-duration: 0.7s;
+  animation-direction: alternate;
+}
+
+.hide {
+  animation-name: hide;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 0.7s;
+}
+
+@keyframes show {
+  0% {
+    right: -275px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+
+@keyframes hide {
+  0% {
+    right: 0px;
+  }
+  100% {
+    right: -275px;
+  }
+}
 // #bag.hinge
 
 .hinge {
-	-webkit-animation-name:hinge;
-	        animation-name:hinge;
-	-webkit-animation-duration: 1s;
-	        animation-duration: 1s;
+  -webkit-animation-name: hinge;
+  animation-name: hinge;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
 }
 
 @-webkit-keyframes hinge {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
     -webkit-transform-origin: top;
-            transform-origin: top;
+    transform-origin: top;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
   }
 
   25% {
-  	-webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
     -webkit-transform-origin: top;
-            transform-origin: top;
+    transform-origin: top;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
   }
 
   50% {
     -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
     -webkit-transform-origin: top;
-            transform-origin: top;
+    transform-origin: top;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
   }
 
   75% {
-  	-webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
     -webkit-transform-origin: top;
-            transform-origin: top;
+    transform-origin: top;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
   }
-
 }
 
 @keyframes hinge {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
     -webkit-transform-origin: top;
-            transform-origin: top;
+    transform-origin: top;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
   }
 
   25% {
-  	-webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
     -webkit-transform-origin: top;
-            transform-origin: top;
+    transform-origin: top;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
   }
 
   50% {
     -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
     -webkit-transform-origin: top;
-            transform-origin: top;
+    transform-origin: top;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
   }
 
- 	75% {
-  	-webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
+  75% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
     -webkit-transform-origin: top;
-            transform-origin: top;
+    transform-origin: top;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
   }
 }
 
 #bag.burst {
-	background: url(../img/bag-burst.png) center no-repeat;
-	background-size: 80%;
+  background: url(../img/bag-burst.png) center no-repeat;
+  background-size: 80%;
 }
 
 #bag-health {
-	width: 200px;
-	margin: 0 auto 20px;
+  width: 200px;
+  margin: 0 auto 20px;
 
-	h2 {
-		text-align: center;
-		margin-bottom: 5px;
-	}
+  h2 {
+    text-align: center;
+    margin-bottom: 5px;
+  }
 
-	div {
-		height: 25px;
-		background: $crimson;
-		-webkit-transition: ease-in-out .05s;
-		-o-transition: ease-in-out .05s;
-		transition: ease-in-out .05s;
-	}
-
+  div {
+    height: 25px;
+    background: $crimson;
+    -webkit-transition: ease-in-out 0.05s;
+    -o-transition: ease-in-out 0.05s;
+    transition: ease-in-out 0.05s;
+  }
 }
