@@ -10,9 +10,11 @@ Desenvolvido com:
 
 
 --------------------------------------------------------------------------------------------------------
+
 # Últimas adições
 
 [x] Sistema de pontuação funcional.
 [x] Uma leaderboard (no momento, quasi-funcional) que irá armazenar as melhores pontuações do usuário.
 [x] Código refatorado para ES6.
+
 ------------------------------------------------------------------------------------------------
