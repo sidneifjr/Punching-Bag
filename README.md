@@ -1,4 +1,4 @@
-# Punching-Bag-In-Vue.js
+# Punching Bag (In Vue)
 
 Um simples jogo para praticar os estudos de Vue.js.
  
