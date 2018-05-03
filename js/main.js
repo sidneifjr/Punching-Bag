@@ -4,8 +4,6 @@ new Vue({
 	data: {
 		health: 100,
 		score: 0,
-
-		// Define que o jogo acaba quando a 'health' atinge 0.
 		ended: false,
 		message: "Congratulations!",
 
@@ -33,7 +31,7 @@ new Vue({
 			audio.play();
 		},
 
-		restart: function(){
+		reset: function(){
 			this.health = 100;
 			this.score = 0;
 			this.ended = false;

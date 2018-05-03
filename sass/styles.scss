@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Titillium+Web");
- 
+
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +26,11 @@ body {
   background: -o-linear-gradient(60deg, #7a3ec0, #70a6e1);
   background: linear-gradient(60deg, #7a3ec0, #70a6e1);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 400% 400%;
+
+  -webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
   // Impede que a scoreboard cause a barra de rolagem horizontal.
   overflow: hidden;
 }
@@ -73,6 +77,19 @@ button {
 
   position: absolute;
   left: 35%;
+  transition: ease-in-out 0.4s;
+
+  @media (max-width: 900px){
+    left: 15%;
+  }
+
+  @media (min-width: 400px) and (max-width: 499px){
+    left: 40px;
+  }
+
+  @media (min-width: 350px) and (max-width: 399px){
+    left: 20px;
+  }
 
   h2 {font-size: 1.5rem;}
 
@@ -187,13 +204,6 @@ button {
   animation-duration: 0.7s;
 }
 
-.rotate {
-  animation-name: rotate;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-
 @keyframes show {
   0% {
     right: -275px;
@@ -209,15 +219,6 @@ button {
   }
   100% {
     right: -275px;
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(180deg);
   }
 }
 
@@ -306,4 +307,41 @@ button {
     -webkit-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
   }
+}
+
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }

@@ -14,13 +14,12 @@
 			<p>{{ score }}</p>
 		</div>
 
-		<div id="bag" v-bind:class="{burst: ended}" class="hinge"></div>
+		<div id="bag" v-bind:class="{burst: ended}" v-bind:style="{transition: ['ease-in-out 0.5s']}" class="hinge"></div>
 
 		<!-- Health -->
 		<div id="bag-health">
 			<p v-if="ended"> {{message}} </p>
 			<h2 v-else-if="!ended">{{ health + '%' }}</h2>
-			<!-- 'v-if' irá fazer com que a barra suma após encerrar o jogo. -->
 			<div v-if="!ended" v-bind:style="{width: health + '%'}"></div>
 		</div>
 
@@ -30,10 +29,10 @@
 				<audio id="audio" src="punch.mp3"></audio>
 				Punch
 			</button>
-			<button v-on:click="restart">Reset</button>
+			<button v-on:click="reset">Reset</button>
 		</div>
 
-		<div class="leaderboard">
+		<div class="leaderboard" v-bind:class="{show: ended}">
 			<button v-on:click="show" id="arrow"> <p> << </p> </button>
 			<ul>
 				<h2>Top Leaderboard</h2>
