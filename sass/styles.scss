@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Titillium+Web");
-
+ 
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@
 }
 
 $white: #fff;
-$crimson: #ed143d;
+$crimson: #ff1440;
 
 html {
   height: 100%;
@@ -22,8 +22,8 @@ body {
   font-family: "Titillium", sans-serif;
   line-height: 1.5;
   color: $white;
-  background: -webkit-linear-gradient(30deg, #7a3ec0, #70a6e1);
-  background: -o-linear-gradient(30deg, #7a3ec0, #70a6e1);
+  background: -webkit-linear-gradient(60deg, #7a3ec0, #70a6e1);
+  background: -o-linear-gradient(60deg, #7a3ec0, #70a6e1);
   background: linear-gradient(60deg, #7a3ec0, #70a6e1);
   background-repeat: no-repeat;
   background-size: cover;
@@ -58,7 +58,9 @@ button {
 
   &:last-child {margin-right: 0;}
 
-  &:hover {background: darken($crimson, 15%);}
+  &:hover {background: lighten($crimson, 3%);}
+
+  &:active {background: darken($crimson, 10%);}
 }
 
 #score {

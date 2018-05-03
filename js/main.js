@@ -4,6 +4,7 @@ new Vue({
 	data: {
 		health: 100,
 		score: 0,
+
 		// Define que o jogo acaba quando a 'health' atinge 0.
 		ended: false,
 		message: "Congratulations!",
@@ -22,7 +23,6 @@ new Vue({
 			this.health -= x;
 			this.score += x;
 
-			// checando se a 'health' é 0 ou menos.
 			if(this.health <= 0) {
 				this.ended = true;
 			}
