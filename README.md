@@ -6,7 +6,7 @@ Um simples jogo para praticar os estudos de Vue.js.
 - [x] Uma leaderboard (no momento, quasi-funcional) que irá armazenar as melhores pontuações do usuário.
 - [x] Código refatorado para ES6.
 - [ ] Usar localStorage para armazenar pontuações do jogador.
-- [ ] Eventualmente, usar Vue-CLI e componentes e publicar sob modo de produção.
+- [ ] Eventualmente, usar a Vue-CLI e componentes e publicar sob modo de produção.
 
 Desenvolvido com: 
 - HTML 
