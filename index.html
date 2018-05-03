@@ -14,20 +14,18 @@
 			<p>{{ score }}</p>
 		</div>
 
-		<div id="bag" v-bind:class="{burst: ended}"></div>
+		<div id="bag" v-bind:class="{burst: ended}" class="hinge"></div>
 
-		<!-- bag health -->
+		<!-- Health -->
 		<div id="bag-health">
 			<p v-if="ended"> {{message}} </p>
-			<!-- controlando a quantidade de vida na barra com data-binding. -->
 			<h2 v-else-if="!ended">{{ health + '%' }}</h2>
-			<!-- 'v-if' irá fazer com que a barra suma após encerrar o jogo, evitando o bug. -->
+			<!-- 'v-if' irá fazer com que a barra suma após encerrar o jogo. -->
 			<div v-if="!ended" v-bind:style="{width: health + '%'}"></div>
 		</div>
 
-		<!-- game controls -->
+		<!-- Controls -->
 		<div id="controls">
-			<!-- Eu só quero exibir o 'punch' button quando estiver em jogo. Com 'v-show=!ended', quando 'ended' for false, esse button será exibido. -->
 			<button v-on:click="punch" v-show="!ended">
 				<audio id="audio" src="punch.mp3"></audio>
 				Punch
@@ -35,17 +33,15 @@
 			<button v-on:click="restart">Reset</button>
 		</div>
 
-		<div class="scoreboard">
-			<button v-on:click="show"> <p> << </p> </button>
+		<div class="leaderboard">
+			<button v-on:click="show" id="arrow"> <p> << </p> </button>
 			<ul>
-				<h2>Top 4 scoreboard</h2>
-				<!-- Armazenar em localStorage e exibir na lista. Talvez, puxar para um array? -->
+				<h2>Top Leaderboard</h2>
 				<li v-for="item in lists">
 					{{ item.position }} - {{ score }} points
 				</li>
 			</ul>
 		</div>
-
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>

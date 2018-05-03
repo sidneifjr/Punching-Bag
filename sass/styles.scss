@@ -8,6 +8,7 @@
   box-sizing: border-box;
 }
 
+$white: #fff;
 $crimson: #ed143d;
 
 html {
@@ -20,7 +21,7 @@ html {
 body {
   font-family: "Titillium", sans-serif;
   line-height: 1.5;
-  color: #fff;
+  color: $white;
   background: -webkit-linear-gradient(30deg, #7a3ec0, #70a6e1);
   background: -o-linear-gradient(30deg, #7a3ec0, #70a6e1);
   background: linear-gradient(60deg, #7a3ec0, #70a6e1);
@@ -38,45 +39,82 @@ body {
 }
 
 p {
+  font-size: 1.4rem;
   text-align: center;
-  font-size: 24px;
 }
 
 button {
   background: $crimson;
-  color: #fff;
+  color: $white;
   padding: 10px 25px;
+
   margin-right: 10px;
-  cursor: pointer;
+
   -webkit-box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
+  
+  cursor: pointer;
+  outline: none;
 
-  &:last-child {
-    margin-right: 0;
-  }
+  &:last-child {margin-right: 0;}
 
-  &:hover {
-    opacity: 0.8;
-  }
+  &:hover {background: darken($crimson, 15%);}
 }
 
 #score {
   font-family: "Titillium", sans-serif;
   background: $crimson;
   border-radius: 50%;
-  padding: 25px;
+  padding: 20px;
   -webkit-box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
 
   position: absolute;
   left: 35%;
 
+  h2 {font-size: 1.5rem;}
+
+  p {font-weight: bold;}
+
+}
+
+#bag {
+  width: 200px;
+  height: 400px;
+
+  background: url(../img/bag.png) center no-repeat;
+  background-size: 80%;
+  
+  margin: auto;
+  margin-bottom: 3vh;
+
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+#bag.burst {
+  background: url(../img/bag-burst.png) center no-repeat;
+  background-size: 80%;
+}
+
+#bag-health {
+  width: 200px;
+  margin: 0 auto 20px;
+
   h2 {
-    font-size: 24px;
+    text-align: center;
+    margin-bottom: 5px;
   }
-  p {
-    font-size: 21px;
-    font-weight: bold;
+
+  div {
+    height: 25px;
+    background: $crimson;
+    -webkit-transition: ease-in-out 0.1s;
+    -o-transition: ease-in-out 0.1s;
+    transition: ease-in-out 0.1s;
   }
 }
 
@@ -92,27 +130,14 @@ button {
   align-items: center;
 }
 
-#bag {
-  width: 200px;
-  height: 400px;
-  margin: auto;
-  background: url(../img/bag.png) center no-repeat;
-  background-size: 80%;
-  -webkit-transform-origin: top;
-  -ms-transform-origin: top;
-  transform-origin: top;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  margin-bottom: 3vh;
-}
-
-.scoreboard {
+.leaderboard {
   font-family: "Open Sans", sans-serif;
-  font-size: 18px;
+  font-size: 1.1rem;
   text-align: center;
-  background: #fff;
+
+  background: $white;
   color: #000;
-  padding: 20px;
+  padding: 1.2rem;
 
   position: absolute;
   top: 15vh;
@@ -121,61 +146,34 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   button {
-    padding: 20px 25px;
-    border-radius: 20%;
     font-weight: bold;
 
+    padding: 20px;
+    border-radius: 50%;
+
     position: absolute;
-    left: -45px;
+    left: -40px;
   }
 
-  p {
-    font-size: 27px;
-  }
+  p {font-size: 1.8rem;}
 
-  span {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    cursor: pointer;
-  }
-
-  h2 {
-    margin-bottom: 10px;
-    //border-bottom: solid 2px #ccc;
-  }
+  h2 {margin-bottom: 10px;}
 
   li {
     flex-basis: 1;
     flex-wrap: wrap;
     list-style-type: none;
     padding: 10px;
-    //border: solid 1px red;
-  }
-
-  .rotate {
-    animation-name: rotate;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-
-    @keyframes rotate {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(180deg);
-      }
-    }
   }
 }
 
 .show {
   animation-name: show;
   animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards; /* faz com que a animação fique no último frame.*/
+  animation-fill-mode: forwards; /* faz com que a animação se mantenha no último frame.*/
   animation-duration: 0.7s;
   animation-direction: alternate;
 }
@@ -185,6 +183,13 @@ button {
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-duration: 0.7s;
+}
+
+.rotate {
+  animation-name: rotate;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 @keyframes show {
@@ -204,6 +209,16 @@ button {
     right: -275px;
   }
 }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
 // #bag.hinge
 
 .hinge {
@@ -288,28 +303,5 @@ button {
     transform-origin: top;
     -webkit-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
-  }
-}
-
-#bag.burst {
-  background: url(../img/bag-burst.png) center no-repeat;
-  background-size: 80%;
-}
-
-#bag-health {
-  width: 200px;
-  margin: 0 auto 20px;
-
-  h2 {
-    text-align: center;
-    margin-bottom: 5px;
-  }
-
-  div {
-    height: 25px;
-    background: $crimson;
-    -webkit-transition: ease-in-out 0.05s;
-    -o-transition: ease-in-out 0.05s;
-    transition: ease-in-out 0.05s;
   }
 }

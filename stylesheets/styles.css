@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 
-/* line 13, ../sass/styles.scss */
+/* line 14, ../sass/styles.scss */
 html {
   height: 100%;
   width: 100%;
@@ -17,7 +17,7 @@ html {
   max-width: 100%;
 }
 
-/* line 20, ../sass/styles.scss */
+/* line 21, ../sass/styles.scss */
 body {
   font-family: "Titillium", sans-serif;
   line-height: 1.5;
@@ -30,59 +30,99 @@ body {
   overflow: hidden;
 }
 
-/* line 35, ../sass/styles.scss */
+/* line 36, ../sass/styles.scss */
 #vue-app {
   position: relative;
   top: 10vh;
 }
 
-/* line 40, ../sass/styles.scss */
+/* line 41, ../sass/styles.scss */
 p {
+  font-size: 1.4rem;
   text-align: center;
-  font-size: 24px;
 }
 
-/* line 45, ../sass/styles.scss */
+/* line 46, ../sass/styles.scss */
 button {
   background: #ed143d;
   color: #fff;
   padding: 10px 25px;
   margin-right: 10px;
-  cursor: pointer;
   -webkit-box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  outline: none;
 }
-/* line 54, ../sass/styles.scss */
+/* line 59, ../sass/styles.scss */
 button:last-child {
   margin-right: 0;
 }
-/* line 58, ../sass/styles.scss */
+/* line 61, ../sass/styles.scss */
 button:hover {
-  opacity: 0.8;
+  background: #a80d2a;
 }
 
-/* line 63, ../sass/styles.scss */
+/* line 64, ../sass/styles.scss */
 #score {
   font-family: "Titillium", sans-serif;
   background: #ed143d;
   border-radius: 50%;
-  padding: 25px;
+  padding: 20px;
   -webkit-box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.2);
   position: absolute;
   left: 35%;
 }
-/* line 74, ../sass/styles.scss */
+/* line 75, ../sass/styles.scss */
 #score h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 /* line 77, ../sass/styles.scss */
 #score p {
-  font-size: 21px;
   font-weight: bold;
 }
 
-/* line 83, ../sass/styles.scss */
+/* line 81, ../sass/styles.scss */
+#bag {
+  width: 200px;
+  height: 400px;
+  background: url(../img/bag.png) center no-repeat;
+  background-size: 80%;
+  margin: auto;
+  margin-bottom: 3vh;
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* line 98, ../sass/styles.scss */
+#bag.burst {
+  background: url(../img/bag-burst.png) center no-repeat;
+  background-size: 80%;
+}
+
+/* line 103, ../sass/styles.scss */
+#bag-health {
+  width: 200px;
+  margin: 0 auto 20px;
+}
+/* line 107, ../sass/styles.scss */
+#bag-health h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+/* line 112, ../sass/styles.scss */
+#bag-health div {
+  height: 25px;
+  background: #ed143d;
+  -webkit-transition: ease-in-out 0.1s;
+  -o-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s;
+}
+
+/* line 121, ../sass/styles.scss */
 #controls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -95,97 +135,70 @@ button:hover {
   align-items: center;
 }
 
-/* line 95, ../sass/styles.scss */
-#bag {
-  width: 200px;
-  height: 400px;
-  margin: auto;
-  background: url(../img/bag.png) center no-repeat;
-  background-size: 80%;
-  -webkit-transform-origin: top;
-  -ms-transform-origin: top;
-  transform-origin: top;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  margin-bottom: 3vh;
-}
-
-/* line 109, ../sass/styles.scss */
-.scoreboard {
+/* line 133, ../sass/styles.scss */
+.leaderboard {
   font-family: "Open Sans", sans-serif;
-  font-size: 18px;
+  font-size: 1.1rem;
   text-align: center;
   background: #fff;
   color: #000;
-  padding: 20px;
+  padding: 1.2rem;
   position: absolute;
   top: 15vh;
   right: -275px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-/* line 125, ../sass/styles.scss */
-.scoreboard button {
-  padding: 20px 25px;
-  border-radius: 20%;
+/* line 151, ../sass/styles.scss */
+.leaderboard button {
   font-weight: bold;
+  padding: 20px;
+  border-radius: 50%;
   position: absolute;
-  left: -45px;
+  left: -40px;
 }
-/* line 134, ../sass/styles.scss */
-.scoreboard p {
-  font-size: 27px;
+/* line 161, ../sass/styles.scss */
+.leaderboard p {
+  font-size: 1.8rem;
 }
-/* line 138, ../sass/styles.scss */
-.scoreboard span {
-  position: absolute;
-  top: 0;
-  right: 20px;
-  cursor: pointer;
-}
-/* line 145, ../sass/styles.scss */
-.scoreboard h2 {
+/* line 163, ../sass/styles.scss */
+.leaderboard h2 {
   margin-bottom: 10px;
 }
-/* line 150, ../sass/styles.scss */
-.scoreboard li {
+/* line 165, ../sass/styles.scss */
+.leaderboard li {
   flex-basis: 1;
   flex-wrap: wrap;
   list-style-type: none;
   padding: 10px;
 }
-/* line 158, ../sass/styles.scss */
-.scoreboard .rotate {
-  animation-name: rotate;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(180deg);
-  }
-}
-/* line 175, ../sass/styles.scss */
+
+/* line 173, ../sass/styles.scss */
 .show {
   animation-name: show;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  /* faz com que a anima├º├úo fique no ├║ltimo frame.*/
+  /* faz com que a anima├º├úo se mantenha no ├║ltimo frame.*/
   animation-duration: 0.7s;
   animation-direction: alternate;
 }
 
-/* line 183, ../sass/styles.scss */
+/* line 181, ../sass/styles.scss */
 .hide {
   animation-name: hide;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-duration: 0.7s;
+}
+
+/* line 188, ../sass/styles.scss */
+.rotate {
+  animation-name: rotate;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 @keyframes show {
@@ -204,7 +217,15 @@ button:hover {
     right: -275px;
   }
 }
-/* line 209, ../sass/styles.scss */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+/* line 224, ../sass/styles.scss */
 .hinge {
   -webkit-animation-name: hinge;
   animation-name: hinge;
@@ -281,28 +302,4 @@ button:hover {
     -webkit-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
   }
-}
-/* line 294, ../sass/styles.scss */
-#bag.burst {
-  background: url(../img/bag-burst.png) center no-repeat;
-  background-size: 80%;
-}
-
-/* line 299, ../sass/styles.scss */
-#bag-health {
-  width: 200px;
-  margin: 0 auto 20px;
-}
-/* line 303, ../sass/styles.scss */
-#bag-health h2 {
-  text-align: center;
-  margin-bottom: 5px;
-}
-/* line 308, ../sass/styles.scss */
-#bag-health div {
-  height: 25px;
-  background: #ed143d;
-  -webkit-transition: ease-in-out 0.05s;
-  -o-transition: ease-in-out 0.05s;
-  transition: ease-in-out 0.05s;
 }

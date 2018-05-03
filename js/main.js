@@ -4,7 +4,6 @@ new Vue({
 	data: {
 		health: 100,
 		score: 0,
-
 		// Define que o jogo acaba quando a 'health' atinge 0.
 		ended: false,
 		message: "Congratulations!",
@@ -20,8 +19,6 @@ new Vue({
 	methods: {
 		punch: function(){
 			const x = Math.floor(Math.random() * (15 - 10 + 1)) + 10;
-
-			// Referenciando a 'health' em data e removendo x do current value.
 			this.health -= x;
 			this.score += x;
 
@@ -30,8 +27,7 @@ new Vue({
 				this.ended = true;
 			}
 
-			// A segunda linha impede ter que esperar o fim do áudio para rodá-lo novamente.
-			var audio = document.querySelector("audio");
+			const audio = document.querySelector("audio");
 			if (!audio) return;
 			audio.currentTime = 0;
 			audio.play();
@@ -40,12 +36,11 @@ new Vue({
 		restart: function(){
 			this.health = 100;
 			this.score = 0;
-			// resetando o 'ended' para false quando recomeçamos o jogo.
 			this.ended = false;
 		},
 
 		show: function() {
-			const show = document.querySelector('.scoreboard');
+			const show = document.querySelector('.leaderboard');
 			if (show.classList.contains('show')){
 				show.classList.remove('show');
 				show.classList.add('hide');
@@ -53,7 +48,7 @@ new Vue({
 				show.classList.add('show');
 				show.classList.remove('hide');
 			}
-		}
+		},
 	},
 
 	computed: {
